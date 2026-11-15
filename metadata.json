@@ -1,0 +1,8 @@
+{
+  "name": "Chttr — AI WhatsApp & Voice Sales Bot for Indian D2C",
+  "description": "Turn Instagram ad clicks into paid Shopify orders with instant WhatsApp chat, live Hinglish & Tanglish outbound phone calls, and 1-click checkout links.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* Deep Obsidian Theme (Default) */
+    --bg-canvas: #090A0F;
+    --bg-canvas-blur: rgba(9, 10, 15, 0.85);
+    --bg-surface: #12141D;
+    --bg-inset: #090A0F;
+    --bg-overlay: rgba(11, 14, 20, 0.95);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-card: rgba(255, 255, 255, 0.11);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --text-primary: #F4F5F7;
+    --text-body: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --text-muted: #7C8494;
+    --accent-lime: #25F46A;
+    --accent-lime-hover: #1EE05E;
+    --accent-on-lime: #090A0F;
+  }
+
+  :root.midnight {
+    /* True Black High-Contrast Midnight Mode */
+    --bg-canvas: #000000;
+    --bg-canvas-blur: rgba(0, 0, 0, 0.94);
+    --bg-surface: #070709;
+    --bg-inset: #000000;
+    --bg-overlay: rgba(0, 0, 0, 0.97);
+    --border-subtle: rgba(255, 255, 255, 0.22);
+    --border-card: rgba(255, 255, 255, 0.28);
+    --border-strong: rgba(255, 255, 255, 0.40);
+    --text-primary: #FFFFFF;
+    --text-body: #F3F4F6;
+    --text-secondary: #D1D5DB;
+    --text-muted: #B8C0CC;
+    --accent-lime: #39FF7A;
+    --accent-lime-hover: #25F46A;
+    --accent-on-lime: #000000;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Range Slider for ROI Calculator */
+input[type='range'].chttr-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--border-strong);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type='range'].chttr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  border: 3px solid var(--bg-canvas);
+  box-shadow: 0 0 0 1px var(--accent-lime);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type='range'].chttr-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+input[type='range'].chttr-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  border: 3px solid var(--bg-canvas);
+  box-shadow: 0 0 0 1px var(--accent-lime);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type='range'].chttr-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(57, 255, 122, 0.55);
+}
+
+/* Subtle custom scrollbar for transcript list */
+.chttr-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chttr-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chttr-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
